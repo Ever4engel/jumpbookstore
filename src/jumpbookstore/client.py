@@ -46,17 +46,6 @@ class Client:
         res = requests.get(endpoint, params=params)
         return json.loads(res.text)
 
-    def gea(self, cid):
-        endpoint = f'https://store.s-bookstore.jp/api4js/v1/c/{cid}'
-        params = {
-            'BID': self.BID,
-            'AID': self.AID,
-            'AVER': self.AVER,
-            'FORMATS': 'epub_brws,epub_brws_fixedlayout,epub_brws_omf',
-        }
-        res = requests.get(endpoint, params=params)
-        return json.loads(res.text)
-
     def get_si(self):
         # see getAccountShelfInfo in bookshelf_1.2.5_2018-10-05.js
         endpoint = 'https://store.s-bookstore.jp/api4js/v1/a/si'

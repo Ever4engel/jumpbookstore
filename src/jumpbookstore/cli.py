@@ -13,8 +13,8 @@ def cli():
 
 
 @cli.command()
-@click.option("--username", required=True)
-@click.option("--password", required=True)
+@click.option('-u', '--username', required=True)
+@click.option('-p', '--password', required=True)
 def bookshelf(username, password):
     client = Client(username, password)
 
@@ -25,8 +25,8 @@ def bookshelf(username, password):
 
 @cli.command()
 @click.argument('cids', nargs=-1)
-@click.option("--username", required=True)
-@click.option("--password", required=True)
+@click.option('-u', '--username', required=True)
+@click.option('-p', '--password', required=True)
 def download(cids, username, password):
     client = Client(username, password)
 
